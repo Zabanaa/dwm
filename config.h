@@ -10,8 +10,8 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "pango:monospace:size=10" };
-static const char dmenufont[]       = "pango:monospace:size=10";
+static const char *fonts[]          = { "pango:Inconsolata:size=10:antialias=true", "FontAwesome:size=8:antialias=true:autohint=true" };
+static const char dmenufont[]       = "pango:Inconsolata:size=10:antialias=true";
 static const char col_gray1[]       = "#1A202C";
 static const char col_gray2[]       = "#4A5568";
 static const char col_gray3[]       = "#CBD5E0";
@@ -31,7 +31,8 @@ static const unsigned int alphas[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+
 
 static const Rule rules[] = {
 	/* xprop(1):
