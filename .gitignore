@@ -1,4 +1,5 @@
 *.orig
+dwm.c.orig
 *.rej
 larbs.pdf
 patches
