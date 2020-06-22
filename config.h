@@ -17,7 +17,7 @@ static const char col_gray2[]       = "#4A5568";
 static const char col_gray3[]       = "#CBD5E0";
 static const char col_gray4[]       = "#F7FAFC";
 static const char col_cyan[]        = "#db65a8";  /* pink */
-static const unsigned int baralpha = 0xff;
+static const unsigned int baralpha = 80;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -92,7 +92,7 @@ static Key keys[] = {
     { MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
     { MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 
-	{ MODKEY,                       XK_Return, zoom,           {0} },
+	{ Mod1Mask,                     XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
