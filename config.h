@@ -12,6 +12,8 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "pango:Inconsolata:size=10:antialias=true", "FontAwesome:size=8:antialias=true:autohint=true" };
 static const char dmenufont[]       = "pango:Inconsolata:size=10:antialias=true";
+static const int horizpadbar        = 2;        /* horizontal padding for statusbar */
+static const int vertpadbar         = 2;        /* vertical padding for statusbar */
 
 /* static const char col_gray1[]       = "#1A202C"; */
 /* static const char col_gray2[]       = "#4A5568"; */
