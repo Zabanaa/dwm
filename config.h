@@ -15,7 +15,7 @@ static const char *fonts[]          = {
     "FontAwesome:size=8:antialias=true:autohint=true"
 };
 static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
-static const int vertpadbar         = 10;        /* vertical padding for statusbar */;
+static const int vertpadbar         = 12;        /* vertical padding for statusbar */;
 
 /* static const char col_gray1[]       = "#1A202C"; */
 /* static const char col_gray2[]       = "#4A5568"; */
