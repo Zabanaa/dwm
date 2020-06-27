@@ -23,14 +23,22 @@ static const int vertpadbar         = 10;        /* vertical padding for statusb
 /* static const char col_gray4[]       = "#292046"; */
 /* static const char col_cyan[]        = "#D3567C";  /1* pink *1/ */
 
-static char normbgcolor[]           = "#222222";
-static char normbordercolor[]       = "#444444";
-static char normfgcolor[]           = "#bbbbbb";
-static char selfgcolor[]            = "#eeeeee";
-static char selbordercolor[]        = "#005577";
-static char selbgcolor[]            = "#005577";
 
-static const unsigned int baralpha = 100;
+/* dark blue - #010618*/
+/* light pink - #EE7ED4 */
+/* white - #FFFFFF */
+/* whitepink - #F2E4F3 */
+/* salmon - #EE7C74 */
+
+static char normbgcolor[]           = "#010618";
+static char normbordercolor[]       = "#010618";
+static char normfgcolor[]           = "#FFFFFF";
+
+static char selfgcolor[]            = "#FFFFFF";
+static char selbordercolor[]        = "#EE7ED4";
+static char selbgcolor[]            = "#010618";
+
+static const unsigned int baralpha = 70;
 static const unsigned int borderalpha = OPAQUE;
 
 static const char *colors[][3] = {
