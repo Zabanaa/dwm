@@ -91,8 +91,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-hp", "chromium", NULL };
-
+static const char *dmenucmd[] = { "dmenu_run", "-hp", "chromium, blueman-manager", NULL };
+static const char *lockcmd[] = { "betterlockscreen", "-l", "dimblur", "-t", "Type password to unlock", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 /*
@@ -118,6 +118,11 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
+    { MODKEY,                       XK_c,      spawn,          SHCMD("alacritty -e nvim ~/.config/dwm/config.h")},
+
+	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = lockcmd } },
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("sleep 0.2; scrot -s -e 'mv $f ~/Pictures/shots/'")},
+
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Left,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_Right,      focusstack,     {.i = -1 } },
