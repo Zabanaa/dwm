@@ -12,7 +12,7 @@ static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = {
     "Liberation Mono:pixelsize=12:antialias=true",
-    "FontAwesome:size=8:antialias=true:autohint=true"
+    "NotoColorEmoji:size=8:antialias=true:autohint=true"
 };
 static const int horizpadbar        = 4;        /* horizontal padding for statusbar */
 static const int vertpadbar         = 12;        /* vertical padding for statusbar */;
