@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static unsigned int borderpx  = 2;        /* border pixel of windows */
 static unsigned int snap      = 32;       /* snap pixel */
@@ -94,7 +96,9 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-hp", "chromium, blueman-manager", NULL };
 static const char *lockcmd[] = { "betterlockscreen", "-l", "dimblur", "-t", "Type password to unlock", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-
+static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
+static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
+static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
 /*
  * Xresources preferences to load at startup
  */
@@ -116,6 +120,8 @@ ResourcePref resources[] = {
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+
+	/* general commands */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_c,      spawn,          SHCMD("alacritty -e nvim ~/.config/dwm/config.h")},
@@ -124,14 +130,16 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = lockcmd } },
 	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("sleep 0.2; scrot -s -e 'mv $f ~/Pictures/shots/'")},
 
+    /* stacks controls */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_Left,      focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_Right,      focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_Left,   focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_Right,  focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_p,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
 
+    /* gaps controls */
     { MODKEY|Mod1Mask,              XK_h,      incrgaps,       {.i = +1 } },
     { MODKEY|Mod1Mask,              XK_l,      incrgaps,       {.i = -1 } },
     { MODKEY|Mod1Mask|ShiftMask,    XK_h,      incrogaps,      {.i = +1 } },
@@ -140,6 +148,11 @@ static Key keys[] = {
     { MODKEY|Mod1Mask|ControlMask,  XK_l,      incrigaps,      {.i = -1 } },
     { MODKEY|Mod1Mask,              XK_0,      togglegaps,     {0} },
     { MODKEY|Mod1Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
+
+    /* volume controls */
+	{ 0,                            XK_F10,    spawn,          {.v = mutevol }},
+	{ 0,                            XK_F11,    spawn,          {.v = downvol }},
+	{ 0,                            XK_F12,    spawn,          {.v = upvol }},
 
 	{ Mod1Mask,                     XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
