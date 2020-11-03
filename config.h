@@ -96,9 +96,11 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-hp", "chromium, blueman-manager", NULL };
 static const char *lockcmd[] = { "betterlockscreen", "-l", "dimblur", "-t", "Type password to unlock", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+
+static const char *upvol[] = { "amixer", "-D", "pulse", "set", "Master", "5%+", "unmute", NULL };
+static const char *downvol[] = { "amixer", "-D", "pulse", "set", "Master", "5%-", "unmute", NULL };
+static const char *mutevol[] = { "amixer", "-D", "pulse", "set", "Master", "toggle", NULL };
+
 /*
  * Xresources preferences to load at startup
  */
