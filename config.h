@@ -93,7 +93,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-hp", "chromium, blueman-manager", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-hp", "brave, blueman-manager", NULL };
 static const char *lockcmd[] = { "betterlockscreen", "-l", "dimblur", "-t", "Type password to unlock", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
