@@ -65,7 +65,8 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Chromium",  NULL,       NULL,       1 << 0,       0,           -1 },
-	{ "Slack",     NULL,       NULL,       1 << 2,       0,           -1 }
+	{ "Slack",     NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "mpv",       NULL,       "video0 - mpv",       1 << 0,       1,           -1 }
 };
 
 /* layout(s) */
@@ -101,7 +102,7 @@ static const char *upvol[] = { "amixer", "-D", "pulse", "set", "Master", "5%+", 
 static const char *downvol[] = { "amixer", "-D", "pulse", "set", "Master", "5%-", "unmute", NULL };
 static const char *mutevol[] = { "amixer", "-D", "pulse", "set", "Master", "toggle", NULL };
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "mpv", "--geometry=-0-0", "--autofit=30%", "/dev/video0", NULL };
+static const char *scratchpadcmd[] = { "mpv", "--geometry=-0-0", "--autofit=18%", "/dev/video0", NULL };
 
 
 /*
