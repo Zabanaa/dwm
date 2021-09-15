@@ -64,8 +64,8 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Chromium",  NULL,       NULL,      1 << 0,       0,           -1 },
-	{ "Slack",    NULL,       NULL,       1 << 2,       0,           -1 }
+	{ "Chromium",  NULL,       NULL,       1 << 0,       0,           -1 },
+	{ "Slack",     NULL,       NULL,       1 << 2,       0,           -1 }
 };
 
 /* layout(s) */
@@ -100,6 +100,9 @@ static const char *termcmd[]  = { "alacritty", NULL };
 static const char *upvol[] = { "amixer", "-D", "pulse", "set", "Master", "5%+", "unmute", NULL };
 static const char *downvol[] = { "amixer", "-D", "pulse", "set", "Master", "5%-", "unmute", NULL };
 static const char *mutevol[] = { "amixer", "-D", "pulse", "set", "Master", "toggle", NULL };
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "mpv", "--geometry=-0-0", "--autofit=30%", "/dev/video0", NULL };
+
 
 /*
  * Xresources preferences to load at startup
@@ -125,8 +128,10 @@ static Key keys[] = {
 
 	/* general commands */
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_s,	   togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_c,      spawn,          SHCMD("alacritty -e nvim ~/.config/dwm/config.h")},
+    { MODKEY,                       XK_n,      spawn,          SHCMD("alacritty -e nnn")},
     { MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("/bin/bash ~/.dotfiles/edit_config_files.sh")},
 
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = lockcmd } },
