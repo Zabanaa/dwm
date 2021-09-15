@@ -63,10 +63,11 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
+	/* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
 	{ "Chromium",  NULL,       NULL,       1 << 0,       0,           -1 },
 	{ "Slack",     NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "mpv",       NULL,       "video0 - mpv",       1 << 0,       1,           -1 }
+	{ "mpv",	   NULL,       "video0",       1 << 0,       1,           -1,        30, 30,300,300,        -1},
+	{ "Alacritty",	   NULL,       "nnn",       1 << 0,       1,           -1,        -1, -1, 800, 800,        -1},
 };
 
 /* layout(s) */
@@ -132,7 +133,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_s,	   togglescratch,  {.v = scratchpadcmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_c,      spawn,          SHCMD("alacritty -e nvim ~/.config/dwm/config.h")},
-    { MODKEY,                       XK_n,      spawn,          SHCMD("alacritty -e nnn")},
+    { MODKEY,                       XK_n,      spawn,          SHCMD("alacritty -t nnn -e nnn")},
     { MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("/bin/bash ~/.dotfiles/edit_config_files.sh")},
 
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = lockcmd } },
