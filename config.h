@@ -66,8 +66,8 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor    float x,y,w,h         floatborderpx*/
 	{ "Chromium",  NULL,       NULL,       1 << 0,       0,           -1 },
 	{ "Slack",     NULL,       NULL,       1 << 2,       0,           -1 },
-	{ "mpv",	   NULL,       "video0",       1 << 0,       1,           -1,        30, 30,300,300,        -1},
-	{ "Alacritty",	   NULL,       "nnn",       1 << 0,       1,           -1,        -1, -1, 800, 800,        -1},
+	{ "mpv",	   NULL,       "video0",       1 << 0,       1,           -1,        -50, -50,300,300,        -1},
+	{ "Alacritty",	   NULL,       "nnn",       1 << 0,       1,           -1,        -1, -1, 1200, 600,        -1},
 };
 
 /* layout(s) */

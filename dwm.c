@@ -352,19 +352,16 @@ applyrules(Client *c)
 				c->hasfloatbw = 1;
 			}
 			if (r->isfloating) {
+				c->x = c->mon->mx + r->floatx;
+				c->y = c->mon->my + r->floaty;
+
 				if (r->floatx == -1) {
-					c->x = c->mon->mx + (c->mon->mw - WIDTH(c)) / 2;
-				}
-				else {
-					c->x = c->mon->mx + r->floatx;
+					c->x = c->mon->mx + (c->mon->mw - r->floatw) / 2;
 				}
 
 				if (r->floaty == -1) {
-					c->y = c->mon->my + (c->mon->mh - HEIGHT(c)) / 2;
+					c->y = c->mon->my + (c->mon->mh - r->floath) / 2;
 				} 
-				else {
-					c->y = c->mon->my + r->floaty;
-				}
 
 				if (r->floatw >= 0) c->w = r->floatw;
 				if (r->floath >= 0) c->h = r->floath;
