@@ -137,7 +137,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("/bin/bash ~/.dotfiles/edit_config_files.sh")},
 
 	{ MODKEY|ShiftMask,             XK_x,      spawn,          {.v = lockcmd } },
-	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("sleep 0.2; scrot -s -e 'mv $f ~/Pictures/shots/'")},
+	{ MODKEY|ShiftMask,             XK_s,      spawn,          SHCMD("flameshot gui")},
 
     /* stacks controls */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
